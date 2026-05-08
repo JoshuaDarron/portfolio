@@ -5,9 +5,9 @@ var blogPosts = {
 		date: '2026-03-01',
 		excerpt: 'Exploring the principles and patterns behind designing AI systems that prioritize user privacy and data ownership.',
 		content: [
-			{ type: 'p', text: 'Privacy-first AI is more than a buzzword — it\'s a fundamental shift in how we think about data and machine learning systems. In this post, I\'ll walk through the key principles I\'ve learned building data-intensive platforms.' },
+			{ type: 'p', text: 'Privacy-first AI is more than a buzzword. It is a fundamental shift in how we think about data and machine learning systems. In this post, I walk through the key principles I have learned building data-intensive platforms.' },
 			{ type: 'h2', text: 'Why Privacy Matters in AI' },
-			{ type: 'p', text: 'As AI systems become more prevalent, the question of who owns the data — and who benefits from it — becomes increasingly important. Users deserve transparency and control over how their information is used.' },
+			{ type: 'p', text: 'As AI systems become more prevalent, the question of who owns the data, and who benefits from it, becomes increasingly important. Users deserve transparency and control over how their information is used.' },
 			{ type: 'h2', text: 'Practical Patterns' },
 			{ type: 'p', text: 'Local-first architectures, federated learning, and differential privacy are all tools in the privacy-first toolkit. The key is choosing the right approach for your specific use case and constraints.' },
 			{ type: 'h2', text: 'Looking Ahead' },
@@ -26,7 +26,7 @@ var blogPosts = {
 			card.className = 'blog-card reveal';
 
 			var a = document.createElement('a');
-			a.href = 'blog-post.html?slug=' + slug;
+			a.href = '/blog/' + slug + '/';
 
 			var h3 = document.createElement('h3');
 			h3.textContent = post.title;
@@ -49,8 +49,11 @@ var blogPosts = {
 	// Render blog post detail on blog-post.html
 	var articleEl = document.getElementById('blogArticle');
 	if (articleEl) {
-		var params = new URLSearchParams(window.location.search);
-		var slug = params.get('slug');
+		var slug = new URLSearchParams(window.location.search).get('slug');
+		if (!slug) {
+			var m = window.location.pathname.match(/^\/blog\/([^/]+)\/?$/);
+			if (m) slug = m[1];
+		}
 
 		if (!slug || !blogPosts[slug]) {
 			articleEl.innerHTML = '<h1>Post not found</h1><p>The requested blog post doesn\'t exist.</p><a href="./index.html#blog" class="btn-outline">Back to Blog</a>';
@@ -58,7 +61,7 @@ var blogPosts = {
 		}
 
 		var post = blogPosts[slug];
-		document.title = post.title + ' — Joshua D. Phillips';
+		document.title = post.title + ' | Joshua D. Phillips';
 
 		var titleEl = document.createElement('h1');
 		titleEl.textContent = post.title;

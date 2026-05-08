@@ -1,4 +1,4 @@
-var CACHE_NAME = 'portfolio-v3';
+var CACHE_NAME = 'portfolio-v5';
 
 var STATIC_ASSETS = [
 	'./',

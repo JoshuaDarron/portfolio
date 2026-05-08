@@ -1,49 +1,53 @@
 # Joshua Darron Phillips
 
-> Developer Relations Engineer focused on AI, data, and privacy.
+> Founding engineer at RocketRide, an open-source AI runtime. I build the developer-facing surface in TypeScript, Python, and C++.
 
 ## About
 
-Joshua Darron Phillips is a Developer Relations Engineer and software builder based in California. He specializes in AI products, developer tools, data systems, and privacy-aware engineering. He comes from a full-stack engineering background with a focus on backend systems, data-intensive applications, and enterprise-grade software.
+Joshua Darron Phillips is a founding-team engineer at RocketRide AI Inc., based in California. He owns the developer-facing surface of an open-source MIT-licensed AI runtime: the TypeScript and Python SDKs, the MCP server, the VS Code extension, and the workshop tooling. He also built Pulsar, a market intelligence agent running internally across finance, HR, and marketing at RocketRide, which launches as a featured app on RocketRide Cloud. He works in TypeScript, Python, and C++, and writes about what he builds.
 
 ## Current Role
 
-- Developer Relations Engineer at RocketRide AI Inc. (2026 - Present, San Francisco, CA)
-- Leading developer-facing initiatives for an AI pipeline platform
-- Designing sample applications, reference architectures, and end-to-end AI workflow demos
+- Founding Engineer at RocketRide AI Inc. (2026 - Present, San Francisco, CA)
+- Owns the developer-facing surface: TypeScript SDK, Python SDK, MCP server, VS Code extension, workshop tooling
+- Built Pulsar, the internal market intelligence agent launching as a featured app on RocketRide Cloud
 
 ## Skills & Technologies
 
-- Languages: TypeScript, Python, Go, JavaScript
-- Backend: Node.js, REST APIs, Data Streaming
-- Databases: MySQL, PostgreSQL, MSSQL, MongoDB, ArangoDB
-- Frontend: React, Vue.js
+- Languages: TypeScript, Python, C++, JavaScript, Go
+- Backend: Node.js, REST APIs, Data Streaming, Pipeline Architecture
+- AI Tooling: MCP, AI Agents, AI Runtimes, OpenAI, Claude, Ollama
+- Databases: Postgres, Neo4j (Graph Data Science), MySQL, MongoDB, MSSQL
+- Frontend: Next.js, React, Vue.js
 - Cloud & DevOps: AWS, Docker, Linux
-- AI/ML: OpenAI, Ollama, Claude, AI/ML pipelines
-- Other: Salesforce, Agile/Scrum, Vim
 
 ## Experience
 
-- RocketRide AI Inc. — Developer Relations Engineer (2026 - Present)
-- Aparavi Software AG — Software Engineer (2022 - 2026)
-- HOTB Software — Software Engineer (2020 - 2022)
-- Nihon Kohden — Software Engineer (2020 - 2021)
-- Rogue Cloud — Software Engineer (2019)
-- AppMakersLA — Project Manager Intern (2016)
+- RocketRide AI Inc.: Founding Engineer (2026 - Present)
+- Aparavi Software AG: Software Engineer (2022 - 2026)
+- HOTB Software: Software Engineer (2020 - 2022)
+- Nihon Kohden: Software Engineer (2020 - 2021)
+- Rogue Cloud: Software Engineer (2019)
+- AppMakersLA: Project Manager Intern (2016)
 
 ## Projects
 
-- Aparavi: Data intelligence automation platform (Node, React, SQL, AWS)
-- Georgia Rental Assistance: Government assistance platform (Node, React, SQL, AWS)
-- CoreCompli: Compliance platform (Node, SQL, AWS)
-- MongoOQ: NPM package for MongoDB (MongoDB, Node, NPM)
-- NK Lab: Medical data waveform visualization (Node, Vue, SQL)
-- CSViewer: Chrome extension for CSV files (Browser Extension)
+- Pulsar: Market intelligence agent built on RocketRide. Adopted internally by finance, HR, and marketing. Launching as a featured app on RocketRide Cloud. (Next.js, Postgres, Neo4j, Claude) https://github.com/joshuadarron/pulsar
+- RocketRide: Open-source MIT-licensed AI runtime, 2k+ stars. (C++, TypeScript, Python, MCP) https://github.com/rocketride-org/rocketride-server
+- RocketRide Workshops: Workshop scaffolding with cross-platform launchpad tool. (TypeScript, pnpm) https://github.com/rocketride-org/rocketride-workshops
+- rocket-reviewer: Multi-agent code review system. (TypeScript, Agents) https://github.com/joshuadarron/rocket-reviewer
+- godseye: Real-time global tracking system. https://github.com/joshuadarron/godseye
+
+## Writing
+
+- Medium: https://joshuadarron.medium.com/
+- Published in Level Up Coding and Generative AI. Recent topics: naming the AI layer of the stack, dogfooding Pulsar, internal adoption of Pulsar, RAG pipeline performance, MCP tool design, IDE-as-runtime, Pulsar findings on Go.
 
 ## Contact
 
 - Email: phillips@joshuadarron.com
 - LinkedIn: https://www.linkedin.com/in/joshuadarron/
-- Twitter: https://twitter.com/joshuadarron
+- Twitter/X: https://twitter.com/joshuadarron
 - GitHub: https://github.com/joshuadarron
+- Medium: https://joshuadarron.medium.com/
 - Website: https://joshuadarron.com

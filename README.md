@@ -1,6 +1,6 @@
 # joshuadarron.com
 
-Personal portfolio site for Joshua D. Phillips — Developer Relations Engineer specializing in AI, data, and privacy.
+Personal portfolio site for Joshua D. Phillips. Founding-team engineer at RocketRide, an open-source MIT-licensed AI runtime. Builds developer tooling in TypeScript, Python, and C++.
 
 Built with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies.
 
@@ -54,11 +54,12 @@ joshuadarron.com/
 |---------|-------------|
 | **Hero** | Greeting, animated headline, and CTA |
 | **Technologies** | Scrolling bar of core tech (MySQL, MongoDB, TypeScript, Python, Go, etc.) |
-| **Services** | Four capability cards (DevRel, Full-Stack, Data & AI, Backend) |
+| **Services** | Four capability cards (SDK & Tooling, Full-Stack, Data & AI, Backend) |
 | **Profile** | About section with photo and bio |
 | **Experience** | Career timeline with clickable cards linking to detail pages |
-| **Portfolio** | Project grid with screenshots, descriptions, and tech tags |
-| **Contact** | Email and social links (LinkedIn, Twitter, GitHub) |
+| **Portfolio** | Project grid with descriptions, links, and tech tags |
+| **Writing** | Featured Medium articles with link to author page |
+| **Contact** | Email, Medium, and social links (GitHub, LinkedIn, X) |
 
 ## Development
 
@@ -72,20 +73,20 @@ python -m http.server 8000
 npx serve .
 ```
 
-Edit HTML, CSS, and JS files directly — changes are reflected on refresh.
+Edit HTML, CSS, and JS files directly. Changes are reflected on refresh.
 
-## Experience Pages
+## Routes
 
-Experience detail pages are driven by query parameters. Each company has its own dataset rendered dynamically by `experience.js`:
+Public URLs use clean paths. CloudFront rewrites them to the existing static HTML at origin (the address bar stays clean; `experience.js` / `case-study.js` / `blog.js` read the slug from `location.pathname`):
 
 ```
-experience.html?company=rocketride
-experience.html?company=aparavi
-experience.html?company=hotb
-experience.html?company=nihonkohden
-experience.html?company=roguecloud
-experience.html?company=appmakersla
+/                              → index.html
+/experience/<slug>/            → experience.html (slug ∈ rocketride, aparavi, hotb, nihonkohden, roguecloud, appmakersla)
+/portfolio/<slug>/             → case-study.html (slug ∈ aparavi, ga-era, corecompli, mongooq, nk-lab, csviewer)
+/blog/<slug>/                  → blog-post.html (slug ∈ example-post)
 ```
+
+Legacy `*.html?param=` URLs 301 to the clean shape via the same CloudFront Function. Locally (with `npx serve .`) the rewrite does not run, so the old query-string URLs are the way to test detail pages.
 
 ## SEO & Discoverability
 

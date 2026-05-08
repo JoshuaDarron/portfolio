@@ -1,48 +1,57 @@
 const experiences = {
 	rocketride: {
 		company: "RocketRide AI Inc.",
-		title: "Developer Relations Engineer",
+		title: "Founding Engineer",
 		location: "San Francisco, CA",
 		period: "2026 - Current",
 		description:
-			"Leading developer-facing initiatives to drive adoption of RocketRide's AI pipeline platform, focused on making it easier and more cost-effective to build and deploy production-ready AI products. Working hands-on with the platform to design sample applications, reference architectures, and end-to-end use cases spanning data ingestion, transformation, embedding generation, and deployment. Serving as the bridge between engineering, product, and the developer community by translating complex technical concepts into clear documentation, presentations, and educational content for both technical and non-technical audiences.",
+			"Founding-team engineer on an open-source MIT-licensed AI runtime. I own the developer-facing surface: TypeScript SDK, Python SDK, MCP server, VS Code extension, and workshop tooling. I also built Pulsar, a market intelligence agent running internally across finance, HR, and marketing, which launches as a featured app on RocketRide Cloud. I work in TypeScript, Python, and C++, and I write about what I build.",
 		highlights: [
-			"Built and published the RocketRide Python SDK and Node.js SDK, available on PyPI and npm",
-			"Developed the RocketRide MCP stdio server for streaming local files to RocketRide EaaS",
-			"Contributed to the open source RocketRide Server and authored the official platform documentation",
-			"Produced video content demonstrating open source benchmarking of GPT, Claude, Gemini, and Grok",
-			"Collaborate with engineering teams to surface developer feedback, identify usability gaps, and influence product direction",
-			"Support developers through workshops, demos, and direct engagement with emphasis on data privacy and responsible deployment",
+			"Built and published the RocketRide TypeScript and Python SDKs, available on npm and PyPI",
+			"Developed the RocketRide MCP stdio server for streaming local files to the runtime",
+			"Built the RocketRide VS Code extension for in-IDE pipeline development",
+			"Designed the workshop launchpad: cross-platform tool that resolves runtime versions, downloads OS-specific binaries, and boots UI plus API plus runtime with one pnpm dev",
+			"Built Pulsar end-to-end: Next.js, Postgres, Neo4j with Graph Data Science, Claude Sonnet, RocketRide pipelines. Adopted internally by finance, HR, and marketing",
+			"Contributed to the open source RocketRide server and authored the official platform documentation",
 		],
 		technologies: [
-			"Python",
 			"TypeScript",
+			"Python",
+			"C++",
 			"Node.js",
-			"AI/ML",
+			"MCP",
+			"Postgres",
+			"Neo4j",
 			"Docker",
 			"REST API",
 		],
 		videos: [
 			{
 				name: "RocketRide: The Open Source Way to Benchmark GPT, Claude, Gemini, and Grok",
-				description: "YouTube video walkthrough of RocketRide's open source benchmarking capabilities",
-				tech: ["AI/ML", "Benchmarking", "Open Source"],
+				description: "YouTube walkthrough of RocketRide's open source benchmarking capabilities",
+				tech: ["Benchmarking", "Open Source"],
 				image: "https://img.youtube.com/vi/pq2eRW_0D0Q/hqdefault.jpg",
 				link: "https://www.youtube.com/watch?v=pq2eRW_0D0Q",
 			},
 		],
 		projects: [
 			{
-				name: "rocketride (PyPI)",
-				description: "RocketRide Pipeline Python Client SDK for executing data processing pipelines via async/WebSocket",
-				tech: ["Python", "WebSocket", "SDK"],
-				link: "https://pypi.org/project/rocketride/",
+				name: "Pulsar",
+				description: "Market intelligence agent built on RocketRide. Adopted internally at RocketRide and launching as a featured app on RocketRide Cloud.",
+				tech: ["Next.js", "Postgres", "Neo4j", "Claude"],
+				link: "https://github.com/joshuadarron/pulsar",
 			},
 			{
-				name: "rocketride-mcp (PyPI)",
-				description: "RocketRide MCP stdio server that streams local files to RocketRide EaaS",
-				tech: ["Python", "MCP", "Streaming"],
-				link: "https://pypi.org/project/rocketride-mcp/",
+				name: "rocketride-server (GitHub)",
+				description: "Open-source MIT-licensed AI runtime. C++ core with Python and TypeScript SDKs. 2k+ stars.",
+				tech: ["C++", "Open Source", "Docker"],
+				link: "https://github.com/rocketride-org/rocketride-server",
+			},
+			{
+				name: "rocketride-workshops (GitHub)",
+				description: "Workshop scaffolding for the runtime. Cross-platform launchpad boots UI, API, and runtime with one pnpm dev.",
+				tech: ["TypeScript", "pnpm", "Cross-platform"],
+				link: "https://github.com/rocketride-org/rocketride-workshops",
 			},
 			{
 				name: "rocketride (npm)",
@@ -51,10 +60,16 @@ const experiences = {
 				link: "https://www.npmjs.com/package/rocketride",
 			},
 			{
-				name: "rocketride-server (GitHub)",
-				description: "RocketRide server application source code",
-				tech: ["Open Source", "Docker", "REST API"],
-				link: "https://github.com/rocketride-org/rocketride-server",
+				name: "rocketride (PyPI)",
+				description: "RocketRide Pipeline Python Client SDK",
+				tech: ["Python", "WebSocket", "SDK"],
+				link: "https://pypi.org/project/rocketride/",
+			},
+			{
+				name: "rocketride-mcp (PyPI)",
+				description: "RocketRide MCP stdio server that streams local files to the runtime",
+				tech: ["Python", "MCP", "Streaming"],
+				link: "https://pypi.org/project/rocketride-mcp/",
 			},
 			{
 				name: "RocketRide Docs",
@@ -213,8 +228,11 @@ const experiences = {
 };
 
 function renderExperience() {
-	const params = new URLSearchParams(window.location.search);
-	const slug = params.get("company");
+	let slug = new URLSearchParams(window.location.search).get("company");
+	if (!slug) {
+		const m = window.location.pathname.match(/^\/experience\/([^/]+)\/?$/);
+		if (m) slug = m[1];
+	}
 
 	if (!slug || !experiences[slug]) {
 		document.querySelector(".detail-main").style.display = "none";
@@ -225,14 +243,14 @@ function renderExperience() {
 
 	const exp = experiences[slug];
 
-	document.title = exp.company + " — Joshua D. Phillips";
+	document.title = exp.company + " | Joshua D. Phillips";
 	document.getElementById("companyName").textContent = exp.company;
 	document.getElementById("companyMeta").textContent =
 		exp.title + " \u00B7 " + exp.location + " \u00B7 " + exp.period;
 	document.getElementById("companyDescription").textContent = exp.description;
 
 	// Update meta tags dynamically
-	var pageUrl = "https://joshuadarron.com/experience.html?company=" + slug;
+	var pageUrl = "https://joshuadarron.com/experience/" + slug + "/";
 	var metaDesc = exp.title + " at " + exp.company + " (" + exp.period + ", " + exp.location + "). " + exp.description.substring(0, 150) + "...";
 
 	var descEl = document.getElementById("metaDescription");
@@ -242,7 +260,7 @@ function renderExperience() {
 	if (canonicalEl) canonicalEl.setAttribute("href", pageUrl);
 
 	var ogTitleEl = document.getElementById("ogTitle");
-	if (ogTitleEl) ogTitleEl.setAttribute("content", exp.company + " — Joshua D. Phillips");
+	if (ogTitleEl) ogTitleEl.setAttribute("content", exp.company + " | Joshua D. Phillips");
 
 	var ogDescEl = document.getElementById("ogDescription");
 	if (ogDescEl) ogDescEl.setAttribute("content", metaDesc);
@@ -251,7 +269,7 @@ function renderExperience() {
 	if (ogUrlEl) ogUrlEl.setAttribute("content", pageUrl);
 
 	var twitterTitleEl = document.getElementById("twitterTitle");
-	if (twitterTitleEl) twitterTitleEl.setAttribute("content", exp.company + " — Joshua D. Phillips");
+	if (twitterTitleEl) twitterTitleEl.setAttribute("content", exp.company + " | Joshua D. Phillips");
 
 	var twitterDescEl = document.getElementById("twitterDescription");
 	if (twitterDescEl) twitterDescEl.setAttribute("content", metaDesc);
@@ -285,7 +303,7 @@ function renderExperience() {
 			},
 			{
 				"@type": "WebPage",
-				"name": exp.company + " — Joshua D. Phillips",
+				"name": exp.company + " | Joshua D. Phillips",
 				"url": pageUrl,
 				"isPartOf": { "@id": "https://joshuadarron.com/#website" },
 				"breadcrumb": { "@type": "BreadcrumbList" }

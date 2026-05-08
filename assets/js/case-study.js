@@ -72,8 +72,11 @@ var caseStudies = {
 	var container = document.getElementById('caseStudyContent');
 	if (!container) return;
 
-	var params = new URLSearchParams(window.location.search);
-	var slug = params.get('project');
+	var slug = new URLSearchParams(window.location.search).get('project');
+	if (!slug) {
+		var m = window.location.pathname.match(/^\/portfolio\/([^/]+)\/?$/);
+		if (m) slug = m[1];
+	}
 
 	if (!slug || !caseStudies[slug]) {
 		container.innerHTML = '<div class="fallback-message" style="display:flex"><div class="container"><h2>Case study not found</h2><p>The requested case study doesn\'t exist.</p><a href="./index.html#portfolio" class="btn-outline">Back to Portfolio</a></div></div>';
@@ -81,7 +84,7 @@ var caseStudies = {
 	}
 
 	var study = caseStudies[slug];
-	document.title = study.name + ' — Case Study — Joshua D. Phillips';
+	document.title = study.name + ' | Case Study | Joshua D. Phillips';
 
 	var html = '';
 	html += '<section class="case-study-header"><h1>' + study.name + '</h1>';
