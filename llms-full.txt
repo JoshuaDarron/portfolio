@@ -162,8 +162,9 @@ URL: https://chromewebstore.google.com/detail/csviewer/khfkmjdhickeapmgolpnmebpp
 
 ## Writing
 
-Active on Medium at https://joshuadarron.medium.com/. Published in Level Up Coding and Generative AI. Recent topics:
+Active on Medium at https://joshuadarron.medium.com/. Published in Level Up Coding, Generative AI, and gitconnected. Recent topics:
 
+- Two Communities Are Building on MCP. They Think It Is Two Different Things. (gitconnected) https://medium.com/gitconnected/two-communities-are-building-on-mcp-they-think-it-is-two-different-things-1630021b373e
 - The Full Stack Is One Layer Deeper. (Level Up Coding) https://joshuadarron.medium.com/the-full-stack-is-one-layer-deeper-youve-been-building-it-0be0ae1d0fdf
 - I Tried to Use My Own Product for Everything. (Level Up Coding) https://joshuadarron.medium.com/i-tried-to-use-my-own-product-for-everything-59ce8ffcc32c
 - I Expected Pulsar to Land on the Repo Shelf. It Didn't. (Generative AI) https://medium.com/generative-ai/i-expected-pulsar-to-land-on-the-repo-shelf-it-didnt-ef81909a73f3
