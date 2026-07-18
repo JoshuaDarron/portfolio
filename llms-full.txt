@@ -164,6 +164,7 @@ URL: https://chromewebstore.google.com/detail/csviewer/khfkmjdhickeapmgolpnmebpp
 
 Active on Medium at https://joshuadarron.medium.com/. Published in Level Up Coding and Generative AI. Recent topics:
 
+- MCP Is the Connective Tissue Your Agent Stack Is Missing. (Level Up Coding) https://medium.com/gitconnected/mcp-is-the-connective-tissue-your-agent-stack-is-missing-318a3618bd35
 - The Palimpsest Library. (Level Up Coding) https://medium.com/gitconnected/the-palimpsest-library-ddd7ec03a7d1
 - Two Communities Are Building on MCP. They Think It Is Two Different Things. (Level Up Coding) https://medium.com/gitconnected/two-communities-are-building-on-mcp-they-think-it-is-two-different-things-1630021b373e
 - The Full Stack Is One Layer Deeper. (Level Up Coding) https://joshuadarron.medium.com/the-full-stack-is-one-layer-deeper-youve-been-building-it-0be0ae1d0fdf
