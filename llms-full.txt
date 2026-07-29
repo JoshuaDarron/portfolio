@@ -171,10 +171,6 @@ Active on Medium at https://joshuadarron.medium.com/. Published in Level Up Codi
 - The Full Stack Is One Layer Deeper. (Level Up Coding) https://joshuadarron.medium.com/the-full-stack-is-one-layer-deeper-youve-been-building-it-0be0ae1d0fdf
 - I Tried to Use My Own Product for Everything. (Level Up Coding) https://joshuadarron.medium.com/i-tried-to-use-my-own-product-for-everything-59ce8ffcc32c
 - I Expected Pulsar to Land on the Repo Shelf. It Didn't. (Generative AI) https://medium.com/generative-ai/i-expected-pulsar-to-land-on-the-repo-shelf-it-didnt-ef81909a73f3
-- Why Your RAG Pipeline Is Slower Than It Needs to Be. https://joshuadarron.medium.com/why-your-rag-pipeline-is-slower-than-it-needs-to-be-419c6cdf89a8
-- Your Pipeline Is Already an MCP Tool. https://joshuadarron.medium.com/your-pipeline-is-already-an-mcp-tool-80449730886f
-- Your IDE Already Runs Your Code. Now It Runs Your AI. https://joshuadarron.medium.com/your-ide-already-runs-your-code-now-it-runs-your-ai-65acfde22f66
-- Pulsar Told Us We Were Wrong About Go. https://joshuadarron.medium.com/pulsar-told-us-we-were-wrong-about-go-f1fdfa892b3d
 
 ## Services
 
